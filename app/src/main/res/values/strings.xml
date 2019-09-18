@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Inspections</string>
+    <string name="launch_file_picker"> File </string>
+    <string name="file_thumbnail">File thumbnail</string>
+    <string name="path">Path : %1$s</string>
+    <string name="size">Size :  %1$d</string>
+    <string name="mime">Mime: %1$s</string>
+    <string name="type">Type : %1$d</string>
+    <string name="name">Name : %1$s</string>
+    <string name="bucketname">BucketName : %1$s</string>
+    <string name="launch_audio_picker">Launch audio picker</string>
+    <string name="launch_video_picker">Launch video picker</string>
+    <string name="launch_image_picker">Image</string>
+    <string name="share_log">Share Log</string>
+
+    <!--    Permissions    -->
+    <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
+    <string name="location_permission_denied">This Application requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; .</string>
+    <string name="permission_required_toast">Location permission is required.</string>
+    <string name="title_activity_maps2">Map</string>
+</resources>

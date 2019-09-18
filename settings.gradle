@@ -1,0 +1,1 @@
+include ':app', ':filepicker', ':locationmanager', ':permissions', ':instructions'

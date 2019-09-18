@@ -1,0 +1,157 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rightLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#e6e6e6"
+    android:weightSum="2">
+
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/laydetails"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_margin="5dp"
+        android:layout_weight="2.6" >
+
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout11"
+            android:background="#e6e6e6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
+
+                <!-- ParkingPlace -->
+                <LinearLayout
+                    android:id="@+id/textview1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:visibility="visible"
+                    android:weightSum="2"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:textColor="#3d3d29"
+                        android:textSize="15sp"
+                        android:layout_weight="1"
+                        android:id="@+id/username"
+                        android:hint="Enter User name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|left"
+                        />
+                </LinearLayout>
+
+                <!-- Capacity -->
+
+
+                <!-- Submit -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/search"
+                        android:gravity="center_vertical|center_horizontal|center"
+                        android:text="Search"
+                        android:textSize="17sp" />
+
+
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+            <!-- Park Me , Park Out ,  -->
+            <LinearLayout
+                android:id="@+id/layout_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:layout_margin="5dp"
+                android:visibility="gone"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical|center_horizontal|center"
+                    android:text="Details"
+                    android:textColor="#366988"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+
+                <ListView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cacheColorHint="@android:color/transparent"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="5dp"
+                    android:listSelector="@android:color/transparent" >
+                </ListView>
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

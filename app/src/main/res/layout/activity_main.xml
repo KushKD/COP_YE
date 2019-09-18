@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:weightSum="5"
+    tools:context=".Activities.MainActivity">
+
+
+<!-- Form -->
+    <LinearLayout
+        android:id="@+id/form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1.2" >
+
+        <ScrollView
+            android:id="@+id/mainScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:background="#e6e6e6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:text="Inspection Form"
+                        android:textColor="#366988"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal|center"
+                        />
+
+                    <!-- inspection place -->
+                    <LinearLayout
+                        android:id="@+id/textview1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:visibility="visible"
+                        android:weightSum="2"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:text="Inspection Place"
+                            android:textColor="#366988"
+                            android:textSize="17sp"
+                            android:layout_weight="1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+
+                        <EditText
+                            android:textColor="#3d3d29"
+                            android:textSize="15sp"
+                            android:layout_weight="1"
+                            android:id="@+id/inspectionplace"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+                    </LinearLayout>
+
+                    <!-- inspection For Department -->
+                    <LinearLayout
+                        android:id="@+id/textview2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:visibility="visible"
+                        android:weightSum="2"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:text="For Department"
+                            android:textColor="#366988"
+                            android:textSize="17sp"
+                            android:layout_weight="1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+
+                        <Spinner
+                            android:textColor="#3d3d29"
+                            android:textSize="15sp"
+                            android:layout_weight="1"
+                            android:id="@+id/fordepartment"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+                    </LinearLayout>
+
+                    <!-- inspection Description -->
+                    <LinearLayout
+                        android:id="@+id/descriptionlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:visibility="visible"
+                        android:weightSum="2"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:text="Description"
+                            android:textColor="#366988"
+                            android:textSize="17sp"
+                            android:layout_weight="1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+
+                        <EditText
+                            android:textColor="#3d3d29"
+                            android:textSize="15sp"
+                            android:inputType="textMultiLine"
+                            android:layout_weight="1"
+                            android:id="@+id/description"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+                    </LinearLayout>
+
+                    <!-- inspection Question 1 -->
+                    <LinearLayout
+                        android:id="@+id/question_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:visibility="visible"
+                        android:weightSum="2"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:text="Whether the Employer maintained the register of attendance of employees "
+                            android:textColor="#366988"
+                            android:textSize="17sp"
+                            android:layout_weight="1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+
+                        <Spinner
+                            android:textColor="#3d3d29"
+                            android:textSize="15sp"
+                            android:inputType="textMultiLine"
+                            android:layout_weight="1"
+                            android:id="@+id/questionone"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+                    </LinearLayout>
+
+                    <!-- inspection Question 2 -->
+                    <LinearLayout
+                        android:id="@+id/question_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:visibility="visible"
+                        android:weightSum="2"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:text="Whether the earned leaves are given to employees as per section"
+                            android:textColor="#366988"
+                            android:textSize="17sp"
+                            android:layout_weight="1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+
+                        <Spinner
+                            android:textColor="#3d3d29"
+                            android:textSize="15sp"
+                            android:inputType="textMultiLine"
+                            android:layout_weight="1"
+                            android:id="@+id/questiontwo"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+                    </LinearLayout>
+
+                    <!-- inspection comments -->
+                    <LinearLayout
+                        android:id="@+id/comments"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:visibility="visible"
+                        android:weightSum="2"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:text="Comments"
+                            android:textColor="#366988"
+                            android:textSize="17sp"
+                            android:layout_weight="1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+
+                        <EditText
+                            android:textColor="#3d3d29"
+                            android:textSize="15sp"
+                            android:inputType="textMultiLine"
+                            android:layout_weight="1"
+                            android:id="@+id/comment"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+                    </LinearLayout>
+
+
+
+    </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+    <!-- List -->
+    <LinearLayout
+        android:id="@+id/listdesign"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.6" >
+        <TextView
+            android:id="@+id/locationText"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/file_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tool:listitem="@layout/file_list_item" />
+    </LinearLayout>
+
+
+        <!-- Buttons -->
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:gravity="bottom|center_horizontal|center_vertical"
+        android:layout_height="match_parent"
+        android:layout_weight="2.2" >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/launch_imagePicker"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/launch_image_picker" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/launch_filePicker"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/launch_file_picker" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/upload"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:text="Upload"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
