@@ -208,10 +208,12 @@ public class MainActivity extends LocationBaseActivity implements SamplePresente
                         MainActivity.this,
                         TaskType.POST_FORM_DATA).
                         execute("PostData", "http://eypoc.com/cmrelief/odisha/api/PostData", formData.toString(), documentsData.toString());
+
+          //Upload Pictures to Server Working
+          new Generic_Async_UploadFiles(  MainActivity.this,  MainActivity.this, TaskType.UPLOAD_FILES).execute(mediaFiles);
             }
 
-            //Upload Pictures to Server Working
-            //new Generic_Async_UploadFiles(  MainActivity.this,  MainActivity.this, TaskType.UPLOAD_FILES).execute(mediaFiles);
+
 
 
         });
@@ -306,6 +308,7 @@ public class MainActivity extends LocationBaseActivity implements SamplePresente
                 obj.put("latitude", Latitude);
                 obj.put("longitude", Longitude);
                 obj.put("user_id", userID);
+                obj.put("form_id", forDepartment_);
 
                 jsonArray.put(obj);
             }
@@ -333,6 +336,9 @@ public class MainActivity extends LocationBaseActivity implements SamplePresente
                     .key("description").value(description_)
                     .key("comments").value(comments_)
                     .key("usr_id").value(userID)
+                    .key("latitude").value(Latitude)
+                    .key("longitude").value(Longitude)
+                    .key("form_id").value("1")
                     .endObject()
                     .endObject();
         } catch (JSONException e) {
