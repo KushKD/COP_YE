@@ -35,14 +35,14 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#FFFFFF"
+                    android:background="@drawable/customborder"
                     android:layout_margin="5dp"
                     android:orientation="vertical"
                     >
 
                     <TextView
                         android:text="Inspection Form"
-                        android:textColor="#366988"
+                        android:textColor="@color/dark_blue"
                         android:textSize="17sp"
                         android:textStyle="bold"
                         android:layout_marginTop="5dp"
@@ -266,6 +266,7 @@
     <LinearLayout
         android:id="@+id/listdesign"
         android:orientation="vertical"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.6" >
@@ -313,6 +314,7 @@
             <Button
                 android:id="@+id/launch_filePicker"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:layout_height="fill_parent"
                 android:text="@string/launch_file_picker" />
         </LinearLayout>

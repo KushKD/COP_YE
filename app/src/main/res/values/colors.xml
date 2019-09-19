@@ -51,4 +51,10 @@
     <color name="tab_enable">#FFFFFF</color>
     <color name="tab_checked">#F3CD70</color>
     <color name="tab_unchecked">#FFFFFF</color>
+
+    <color name="lightest_blue">#bff4ff</color>
+    <color name="medium_blue">#587bc9</color>
+    <color name="light_blue">#7db5db</color>
+    <color name="dark_blue">#3b455a</color>
+    <color name="slidetwo">#AAC0CC</color>
 </resources>

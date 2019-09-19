@@ -45,8 +45,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SampleActivity" />
-        <activity android:name=".fragment.SampleFragmentActivity" />
+
         <activity android:name=".service.SampleServiceActivity" />
 
         <service android:name=".service.SampleService" />

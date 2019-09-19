@@ -33,7 +33,7 @@ import java.util.List;
 import cmreliefdund.kushkumardhawan.com.instructions.MaterialTutorialActivity;
 import cmreliefdund.kushkumardhawan.com.instructions.TutorialItem;
 
-public class SelectUser extends AppCompatActivity implements AsyncTaskListener {
+public class SelectUser extends Activity implements AsyncTaskListener {
 
     EditText username;
     Button search;
@@ -101,17 +101,17 @@ public class SelectUser extends AppCompatActivity implements AsyncTaskListener {
     }
 
     private ArrayList<TutorialItem> getTutorialItems(Context context) {
-        TutorialItem tutorialItem1 = new TutorialItem("Health", "Life and death are in the hands of God but to help the needy during illness is our moral responsibility. In my state there should not be any case where due to lack of fund the treatment of the sick person could not be done. I appeal to the citizens to donate for the cause generously so that the needy people can be helped. ",
-                R.color.g_dark_blue, R.drawable.tut_page_1_background,R.drawable.tut_page_1_front);
+        TutorialItem tutorialItem1 = new TutorialItem("Search User from the Central Repository", "",
+                R.color.g_dark_blue,R.drawable.tut_page_1_front);  //R.drawable.tut_page_1_background
 
-        TutorialItem tutorialItem2 = new TutorialItem("Education", "Education Content...",
-                R.color.slide_1,  R.drawable.tut_page_2_background, R.drawable.tut_page_2_front);
+        TutorialItem tutorialItem2 = new TutorialItem("Real time selection of the place where the Inspection needs to be done", "",
+                R.color.slidetwo,  R.drawable.tut_page_2_background);
 
-        TutorialItem tutorialItem3 = new TutorialItem("Disaster", "Disaster Content...",
-                R.color.slide_4, R.drawable.tut_page_3_background, R.drawable.tut_page_3_foreground);
+        TutorialItem tutorialItem3 = new TutorialItem("Enter data and select the files you want to upload ", "",
+                R.color.slide_4, R.drawable.tut_page_3_background);
 
-        TutorialItem tutorialItem4 = new TutorialItem("Needy", "Needy Content...",
-                R.color.slide_3, R.drawable.tut_page_4_foreground,R.drawable.tut_page_4_background);
+        TutorialItem tutorialItem4 = new TutorialItem("Upload all the Information regarding the Inspection to your Cloud", "",
+                R.color.slide_3, R.drawable.tut_page_4_foreground);
 
 //        TutorialItem tutorialItem5 = new TutorialItem("Girl Child", "Girl Child Content ....",
 //                R.color.slide_3, R.drawable.splash_back);

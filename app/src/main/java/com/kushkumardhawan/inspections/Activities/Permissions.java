@@ -3,6 +3,7 @@ package com.kushkumardhawan.inspections.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import com.kushkumardhawan.inspections.Utilities.EConstants;
 import rakshan.himachal.dit.permissions.RakshamPermissionResponse;
 import rakshan.himachal.dit.permissions.RakshamPermissions;
 
-public class Permissions extends AppCompatActivity implements View.OnClickListener, RakshamPermissions.OnRequestPermissionsBack{
+public class Permissions extends Activity implements View.OnClickListener, RakshamPermissions.OnRequestPermissionsBack{
 
     private static final String TAG = "MainActivity";
 

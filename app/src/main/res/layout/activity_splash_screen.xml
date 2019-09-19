@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rightLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.SplashScreen">
+    android:orientation="vertical"
+    android:background="@color/filter_bg"
+    android:weightSum="3">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- ImageView -->
+
+    <LinearLayout
+        android:id="@+id/lay1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:layout_margin="5dp"
+        android:gravity="right|center_vertical|center_horizontal"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:background="@mipmap/ic_launcher">
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/laydetails"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:layout_weight="2" >
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@drawable/splash">
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold"
+            android:text="Inspection v1.0"
+            android:textSize="28sp"/>
+
+
+    </LinearLayout>
+
+
+    <!-- Button -->
+    <LinearLayout
+        android:id="@+id/lay3"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight=".5"
+        android:gravity="right|center_horizontal|center_vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/medium_blue"
+            android:text="\u00A9 2019 EY LLP"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+</LinearLayout>
