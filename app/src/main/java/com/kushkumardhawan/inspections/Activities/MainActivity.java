@@ -92,9 +92,9 @@ public class MainActivity extends LocationBaseActivity implements SamplePresente
 
         Intent getRoomDetailsIntent = getIntent();
         final User userdetails = (User) getRoomDetailsIntent.getSerializableExtra("UserPoJO");
-        Latitude = getRoomDetailsIntent.getStringExtra("Latitude");
-        Longitude = getRoomDetailsIntent.getStringExtra("Longitude");
-        Log.e("Main Activity", userdetails.toString());
+         Latitude = getRoomDetailsIntent.getStringExtra("Latitude");
+         Longitude = getRoomDetailsIntent.getStringExtra("Longitude");
+
 
         description = (EditText) findViewById(R.id.description);
         comments = (EditText) findViewById(R.id.comment);
@@ -183,7 +183,15 @@ public class MainActivity extends LocationBaseActivity implements SamplePresente
         });
 
 
-        findViewById(R.id.upload).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.this.finish();
+            }
+        });
+
+
+        findViewById(R.id.proceed).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -193,24 +201,37 @@ public class MainActivity extends LocationBaseActivity implements SamplePresente
 
                 formData = createJsonUserFormData(forDepartment_, questionone_, questiontwo_, description_, comments_, userID);
                 Log.e("formDaa", formData.toString());
-                try {
-                    documentsData = createJsonFormDocumentsData(mediaFiles);
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                Log.e("formDaa", formData.toString());
-                Log.e("documentsData", documentsData.toString());
+                Intent UploadDocuments = new Intent();
+                UploadDocuments.putExtra("FormData", formData.toString());
+                UploadDocuments.putExtra("Latitude", Latitude);
+                UploadDocuments.putExtra("Longitude", Longitude);
+                UploadDocuments.putExtra("UserPoJO", userdetails);
+                UploadDocuments.putExtra("ForDepartment", forDepartment_);
+
+               UploadDocuments.setClass(MainActivity.this, Upload.class);
+                startActivity(UploadDocuments);
+
+
+
+//                try {
+//                    documentsData = createJsonFormDocumentsData(mediaFiles);
+//
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//                Log.e("formDaa", formData.toString());
+//                Log.e("documentsData", documentsData.toString());
 
                 //Upload Data to Server
-                new Generic_Async_Post(
-                        MainActivity.this,
-                        MainActivity.this,
-                        TaskType.POST_FORM_DATA).
-                        execute("PostData", "http://eypoc.com/cmrelief/odisha/api/PostData", formData.toString(), documentsData.toString());
+//                new Generic_Async_Post(
+//                        MainActivity.this,
+//                        MainActivity.this,
+//                        TaskType.POST_FORM_DATA).
+//                        execute("PostData", "http://eypoc.com/cmrelief/odisha/api/PostData", formData.toString(), documentsData.toString());
 
           //Upload Pictures to Server Working
-          new Generic_Async_UploadFiles(  MainActivity.this,  MainActivity.this, TaskType.UPLOAD_FILES).execute(mediaFiles);
+         // new Generic_Async_UploadFiles(  MainActivity.this,  MainActivity.this, TaskType.UPLOAD_FILES).execute(mediaFiles);
             }
 
 
@@ -219,21 +240,21 @@ public class MainActivity extends LocationBaseActivity implements SamplePresente
         });
 
 
-        findViewById(R.id.launch_imagePicker).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FilePickerActivity.class);
-                intent.putExtra(FilePickerActivity.CONFIGS, new Configurations.Builder()
-                        .setCheckPermission(true)
-                        .setSelectedMediaFiles(mediaFiles)
-                        .enableImageCapture(true)
-                        .setShowVideos(false)
-                        .setSkipZeroSizeFiles(true)
-                        .setMaxSelection(10)
-                        .build());
-                startActivityForResult(intent, FILE_REQUEST_CODE);
-            }
-        });
+//        findViewById(R.id.launch_imagePicker).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, FilePickerActivity.class);
+//                intent.putExtra(FilePickerActivity.CONFIGS, new Configurations.Builder()
+//                        .setCheckPermission(true)
+//                        .setSelectedMediaFiles(mediaFiles)
+//                        .enableImageCapture(true)
+//                        .setShowVideos(false)
+//                        .setSkipZeroSizeFiles(true)
+//                        .setMaxSelection(10)
+//                        .build());
+//                startActivityForResult(intent, FILE_REQUEST_CODE);
+//            }
+//        });
 
 //        findViewById(R.id.launch_videoPicker).setOnClickListener(new View.OnClickListener() {
 //            @Override

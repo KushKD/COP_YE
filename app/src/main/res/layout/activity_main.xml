@@ -1,24 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tool="http://schemas.android.com/tools"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Activities.MainActivity"
+    android:id="@+id/rightLayout"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    android:weightSum="5"
-    tools:context=".Activities.MainActivity">
+    android:orientation="vertical"
+    android:background="@color/filter_bg"
+    android:weightSum="3">
 
+    <!-- ImageView -->
 
-<!-- Form -->
     <LinearLayout
-        android:id="@+id/form"
+        android:id="@+id/lay1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:visibility="gone"
+        android:layout_margin="5dp"
+        android:gravity="right|center_vertical|center_horizontal"
+        android:orientation="horizontal">
+
+        <!-- List -->
+        <LinearLayout
+            android:id="@+id/listdesign"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/locationText"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/file_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tool:listitem="@layout/file_list_item" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/laydetails"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
         android:orientation="vertical"
-        android:layout_weight="1.2" >
+        android:gravity="center_vertical|center_horizontal|center"
+        android:layout_weight="2.7" >
 
         <ScrollView
             android:id="@+id/mainScrollView"
@@ -35,7 +71,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/customborder"
                     android:layout_margin="5dp"
                     android:orientation="vertical"
                     >
@@ -57,6 +92,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="left"
+                        android:background="@drawable/customborder"
                         android:visibility="visible"
                         android:weightSum="2"
                         android:layout_margin="5dp"
@@ -78,6 +114,7 @@
                             android:textSize="15sp"
                             android:layout_weight="1"
                             android:id="@+id/inspectionplace"
+                            android:hint="City"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical|center_horizontal|left"
@@ -91,6 +128,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left"
                         android:visibility="visible"
+                        android:background="@drawable/customborder"
                         android:weightSum="2"
                         android:layout_margin="5dp"
                         android:orientation="horizontal">
@@ -117,39 +155,7 @@
                             />
                     </LinearLayout>
 
-                    <!-- inspection Description -->
-                    <LinearLayout
-                        android:id="@+id/descriptionlayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="left"
-                        android:visibility="visible"
-                        android:weightSum="2"
-                        android:layout_margin="5dp"
-                        android:orientation="vertical">
 
-
-                        <TextView
-                            android:text="Description"
-                            android:textColor="#366988"
-                            android:textSize="17sp"
-                            android:layout_weight="1"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical|center_horizontal|left"
-                            />
-
-                        <EditText
-                            android:textColor="#3d3d29"
-                            android:textSize="15sp"
-                            android:inputType="textMultiLine"
-                            android:layout_weight="1"
-                            android:id="@+id/description"
-                            android:layout_width="fill_parent"
-                            android:layout_height="50dp"
-                            android:gravity="center_vertical|center_horizontal|left"
-                            />
-                    </LinearLayout>
 
                     <!-- inspection Question 1 -->
                     <LinearLayout
@@ -159,8 +165,10 @@
                         android:gravity="left"
                         android:visibility="visible"
                         android:weightSum="2"
+                        android:background="@drawable/customborder"
                         android:layout_margin="5dp"
-                        android:orientation="vertical">
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
 
 
                         <TextView
@@ -192,9 +200,10 @@
                         android:layout_height="wrap_content"
                         android:gravity="left"
                         android:visibility="visible"
+                        android:background="@drawable/customborder"
                         android:weightSum="2"
                         android:layout_margin="5dp"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
 
                         <TextView
@@ -219,6 +228,41 @@
                             />
                     </LinearLayout>
 
+                    <!-- inspection Description -->
+                    <LinearLayout
+                        android:id="@+id/descriptionlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:visibility="visible"
+                        android:background="@drawable/customborder"
+                        android:weightSum="2"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:text="Description"
+                            android:textColor="#366988"
+                            android:textSize="17sp"
+                            android:layout_weight="1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+
+                        <EditText
+                            android:textColor="#3d3d29"
+                            android:textSize="15sp"
+                            android:inputType="textMultiLine"
+                            android:layout_weight="1"
+                            android:id="@+id/description"
+                            android:layout_width="fill_parent"
+                            android:layout_height="80dp"
+                            android:gravity="center_vertical|center_horizontal|left"
+                            />
+                    </LinearLayout>
+
                     <!-- inspection comments -->
                     <LinearLayout
                         android:id="@+id/comments"
@@ -226,6 +270,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left"
                         android:visibility="visible"
+                        android:background="@drawable/customborder"
                         android:weightSum="2"
                         android:layout_margin="5dp"
                         android:orientation="vertical">
@@ -248,61 +293,48 @@
                             android:layout_weight="1"
                             android:id="@+id/comment"
                             android:layout_width="fill_parent"
-                            android:layout_height="50dp"
+                            android:layout_height="80dp"
                             android:gravity="center_vertical|center_horizontal|left"
                             />
                     </LinearLayout>
 
 
 
-    </LinearLayout>
+                </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
+
+
     </LinearLayout>
 
 
-    <!-- List -->
+    <!-- Button -->
     <LinearLayout
-        android:id="@+id/listdesign"
-        android:orientation="vertical"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.6" >
-        <TextView
-            android:id="@+id/locationText"
-            android:visibility="invisible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/file_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tool:listitem="@layout/file_list_item" />
-    </LinearLayout>
-
-
-        <!-- Buttons -->
-    <LinearLayout
-        android:id="@+id/buttons"
-        android:layout_width="match_parent"
-        android:gravity="bottom|center_horizontal|center_vertical"
-        android:layout_height="match_parent"
-        android:layout_weight="2.2" >
-
-
+        android:id="@+id/lay3"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight=".3"
+        android:gravity="right|center_horizontal|center_vertical"
+        android:orientation="horizontal">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_weight="1"
+            android:orientation="vertical"
             android:layout_height="wrap_content">
             <Button
                 android:id="@+id/launch_imagePicker"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:layout_height="fill_parent"
                 android:text="@string/launch_image_picker" />
+            <Button
+                android:id="@+id/back"
+                android:layout_width="match_parent"
+                android:background="@color/dark_blue"
+                android:textColor="@color/white"
+                android:layout_height="fill_parent"
+                android:text="Back" />
         </LinearLayout>
 
 
@@ -310,11 +342,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_weight="1"
+            android:visibility="gone"
             android:layout_height="wrap_content">
             <Button
                 android:id="@+id/launch_filePicker"
                 android:layout_width="match_parent"
-                android:visibility="gone"
                 android:layout_height="fill_parent"
                 android:text="@string/launch_file_picker" />
         </LinearLayout>
@@ -326,17 +358,57 @@
             android:layout_weight="1"
             android:layout_height="wrap_content">
             <Button
-                android:id="@+id/upload"
+                android:id="@+id/proceed"
                 android:layout_width="match_parent"
+                android:background="@color/dark_blue"
+                android:textColor="@color/white"
                 android:layout_height="fill_parent"
-                android:text="Upload"/>
+                android:text="Proceed"/>
         </LinearLayout>
 
 
     </LinearLayout>
 
-
-
-
-
 </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
